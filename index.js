@@ -1,11 +1,12 @@
 import express from 'express';
-import mongodb from 'mongodb';
+import dotenv from 'dotenv';
 import { MongoClient, ServerApiVersion } from 'mongodb';
 const app = express();
 const port = 4000;
 
+dotenv.config();
 
-const uri = "mongodb+srv://pasot:Zi73TqWxFnkPPvb8@epfullstackmern.xs8acz8.mongodb.net/?retryWrites=true&w=majority";
+const uri = process.env.STRING_URI;
 const client = new MongoClient(
     uri,
     {
